@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    button {
+        width: 50px;
+    }
+</style>
+<body>
+<table style="border: 1px solid grey">
+    <tr>
+        <th colspan="7"><input type="text" style="width: 365px" id="screen"></th>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="display('Rad')">Rad</button>
+        </td>
+        <td>
+            <button onclick="display('...')">...</button>
+        </td>
+        <td>
+            <button onclick="display('x!')">x!</button>
+        </td>
+        <td>
+            <button onclick="display('(')">(</button>
+        </td>
+        <td>
+            <button onclick="display(')')">)</button>
+        </td>
+        <td>
+            <button onclick="display('%')">%</button>
+        </td>
+        <td>
+            <button onclick="clearScreen()">AC</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="display('lnv')">lnv</button>
+        </td>
+        <td>
+            <button onclick="display('Sin')">Sin</button>
+        </td>
+        <td>
+            <button onclick="display('In')">In</button>
+        </td>
+        <td>
+            <button id="7" onclick="display(7)">7</button>
+        </td>
+        <td>
+            <button id="8" onclick="display(8)">8</button>
+        </td>
+        <td>
+            <button id="9" onclick="display(9)">9</button>
+        </td>
+        <td>
+            <button id="divs" onclick="display('/')">/</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="display('Pi')">Pi</button>
+        </td>
+        <td>
+            <button onclick="display('Cos')">Cos</button>
+        </td>
+        <td>
+            <button onclick="display('log')">log</button>
+        </td>
+        <td>
+            <button onclick="display(4)">4</button>
+        </td>
+        <td>
+            <button onclick="display(5)">5</button>
+        </td>
+        <td>
+            <button onclick="display(6)">6</button>
+        </td>
+        <td>
+            <button onclick="display('*')">x</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="display('e')">e</button>
+        </td>
+        <td>
+            <button onclick="display('tan')">tan</button>
+        </td>
+        <td>
+            <button onclick="display('√')">√</button>
+        </td>
+        <td>
+            <button onclick="display(1)">1</button>
+        </td>
+        <td>
+            <button onclick="display(2)">2</button>
+        </td>
+        <td>
+            <button onclick="display(3)">3</button>
+        </td>
+        <td>
+            <button onclick="display('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="display('Ans')">Ans</button>
+        </td>
+        <td>
+            <button onclick="display('EXP')">EXP</button>
+        </td>
+        <td>
+            <button onclick="display('x^y')">x^y</button>
+        </td>
+        <td>
+            <button onclick="display(0)">0</button>
+        </td>
+        <td>
+            <button>.</button>
+        </td>
+        <td>
+            <button onclick="calculate()">=</button>
+        </td>
+        <td>
+            <button onclick="display('+')">+</button>
+        </td>
+    </tr>
+</table>
+<script src="hàm máy tính.js"></script>
+</body>
+</html>
