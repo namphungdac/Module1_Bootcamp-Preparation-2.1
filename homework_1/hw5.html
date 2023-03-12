@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập a", 'a');
+    let b = +prompt("Nhập b", 'b');
+    let c = +prompt("Nhập c", 'c');
+    let delta = b * b - 4 * a * c;
+    let x, x1, x2;
+    if (a === 0) {
+        if (b === 0) {
+            alert("Sai, nhập lại a, b");
+        } else {
+            x = -c / b;
+            alert(`Phương trình có nghiệm là ${x}`);
+        }
+    } else {
+        if (delta < 0) {
+            alert("Phương trình vô nghiệm");
+        } else if (delta === 0) {
+            x = -b / (2 * a);
+            alert(`Phương trình có nghiệm kép: x1 = x2 = ${x}`);
+        } else {
+            let z = Math.sqrt(delta);
+            x1 = (-b + z) / (2 * a);
+            x2 = (-b - z) / (2 * a);
+            alert(`Phương trình có 2 nghiệm: x1 = ${x1}, x2 = ${x2}`);
+        }
+    }
+</script>
+</body>
+</html>

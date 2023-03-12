@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Độ dài cạnh a:');
+    if (a <= 0) {
+        alert('a không hợp lệ');
+    } else {
+        let b = +prompt('Độ dài cạnh b:');
+        if (b <= 0) {
+            alert('b không hợp lệ');
+        } else {
+            let c = +prompt('Độ dài cạnh c:');
+            if (c <= 0) {
+                alert('c không hợp lệ');
+            } else {
+                if ((a + b) > c && (a + c) > b && (c + b) > a) {
+                    if (a === b && b === c) {
+                        alert("Đây là tam giác đều");
+                    } else if (a === b || a === c || b === c) {
+                        alert("Đây là tam giác cân");
+                    } else if (a * a === b * b + c * c || b * b === a * a + c * c || c * c === a * a + b * b) {
+                        alert("Đây là tam giác vuông");
+                    } else {
+                        alert("Đây là tam giác thường");
+                    }
+                } else {
+                    alert("Đây không là ba cạnh của tam giác");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

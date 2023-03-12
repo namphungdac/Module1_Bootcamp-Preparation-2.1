@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt('Nhập số điện:', 'kWh');
+    let money;
+    if (n < 0) {
+        alert('Số điện không hợp lệ');
+    } else {
+        if (n <= 50) {
+            money = n * 1678;
+        } else if (n <= 100) {
+            money = (n - 50) * 1734 + (50 * 1678);
+        } else if (n <= 200) {
+            money = (n - 100) * 2014 + (50 * 1734) + (50 * 1678);
+        } else if (n <= 300) {
+            money = (n - 200) * 2536 + (100 * 2014) + (50 * 1734) + (50 * 1678);
+        } else if (n <= 400) {
+            money = (n - 300) * 2834 + (100 * 2536) + (100 * 2014) + (50 * 1734) + (50 * 1678);
+        } else {
+            money = (n - 400) * 2927 + (100 * 2834) + (100 * 2536) + (100 * 2014) + (50 * 1734) + (50 * 1678);
+        }
+        alert(`Số tiền điện là: ${money} VNĐ`);
+    }
+</script>
+</body>
+</html>

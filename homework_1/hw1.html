@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Nhập số dân:', 'người');
+    if (a <= 0) {
+        alert('Số dân không hợp lệ');
+    } else {
+        if (a % 1 !== 0) {
+            alert('Số dân không hợp lệ');
+        } else {
+            let b = +prompt('Nhập diện tích:', 'km2');
+            if (b <= 0) {
+                alert('Diện tích không hợp lệ');
+            } else {
+                if (a / b > 1000) {
+                    alert('Khu vực này quá đông đúc');
+                } else {
+                    alert('Khu vực này không quá đông đúc');
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
