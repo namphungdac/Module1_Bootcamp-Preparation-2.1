@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkSNT(number){
+      if (number< 2 ) {
+          return false;
+      }
+      for (let i = 2; i < number -1 ; i++) {
+          if (number % i === 0) {
+              return false;
+              break;
+          }
+      }
+      return true;
+  }
+  let n = +prompt('Nhap n');
+  let count = 1;
+  let x = 0;
+  while (count <= n) {
+      if (checkSNT(x)) {
+          document.write(x + '<br>');
+          count++;
+      }
+      x++;
+  }
+</script>
+</body>
+</html>

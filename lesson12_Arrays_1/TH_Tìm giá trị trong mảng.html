@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [1, 2, 3, 1, 5, 2, 1, 1];
+  let x = +prompt('Nhập giá trị cần tìm trong mảng');
+  let index = "";
+  for (let i = 0; i < a.length; i++) {
+    if (x === a[i]) {
+      index += `${i}, `;
+      console.log(index);
+    }
+    if (index === '') {
+        index = 'No';
+    }
+  }
+  alert(`Value ${x} founded at index ${index}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt('Nhập số nguyên dương N');
+  let gt = 1;
+  while (n<0 || n%1 !== 0) {
+    n = +prompt('Nhập lại N là số nguyên dương');
+  }
+  for (let i = 2; i <= n; i++) {
+    gt *= i;
+  }
+  alert(`Giai thừa của ${n} là ${gt}`);
+</script>
+</body>
+</html>

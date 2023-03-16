@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="add" type="text">
+<button type="submit" onclick="add_index_to_array()">Add</button>
+<button type="submit" onclick="display_the_array()">Display</button>
+<p id="display_array"></p>
+<br>
+<br>
+<input type="text" id="element" placeholder="max">
+<button type="submit" onclick="find()">Enter the element to find</button>
+<p id="display_position"></p>
+<script>
+  let a = [];
+  idx = 0;
+  let x = 0;
+  function add_index_to_array() {
+    a[idx] = document.getElementById('add').value;
+    idx++;
+    document.getElementById('add').value = "";
+  }
+  function display_the_array() {
+    document.getElementById('display_array').innerHTML = `This array just enterred is: ${a}`;
+  }
+  function find() {
+    let max = a[0];
+    let position = "";
+    fd = document.getElementById('element').value;
+    for (let i = 1; i < a.length; i++) {
+      if (max<= a[i]) {
+        max = a[i];
+        position += `${i}, `;
+      }
+    }
+    document.getElementById('display_position').innerHTML = `The element ${fd} is ${max} founded at index ${position}`;
+  }
+</script>
+</body>
+</html>
