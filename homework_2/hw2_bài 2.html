@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="number" id="element">
+<button type="submit" onclick="addArray()">Add array</button>
+<p id="displayArr"></p>
+<!--<p id="displayMax"></p>-->
+<p id="displayMax2"></p>
+<script>
+  let arr = [];
+  let arr2 = [];
+  let idx = 0;
+  let max;
+  let max2;
+  function addArray() {
+    arr[idx] = Number(document.getElementById('element').value);
+    idx++;
+    document.getElementById('element').value = '';
+    document.getElementById('displayArr').innerHTML = `This array just enterred is: ${arr}`;
+    // console.log(arr);
+    // console.log(typeof ([0]));
+    max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if (max < arr[i]) {
+        max = arr[i];
+      }
+      arr2 = arr.filter(function (value) {
+        return value !== max;
+      });
+      console.log(arr2)
+      max2 = arr2[0];
+      for (let j = 0; j < arr2.length; j++) {
+        if (max2 < arr2[j]) {
+          max2 = arr2[j];
+        }
+      }
+    }
+    // document.getElementById('displayMax').innerHTML = `Max_number = ${max} <p>`;
+    document.getElementById('displayMax2').innerHTML = `The second max element is: ${max2} <p>`;
+  }
+</script>
+</body>
+</html>

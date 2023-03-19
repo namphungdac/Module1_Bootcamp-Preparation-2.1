@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [-1, false, 0, 1, '', 2, undefined, 3, 'abc', null, 4]
+    document.write('arr_1 = ' + arr + '<br>' + '<br>');
+    console.log(arr);
+    let arr2 = arr.filter(function (value) {
+        return value;
+    });
+    document.write('arr_2 = ' + arr2);
+    console.log(arr2);
+</script>
+</body>
+</html>

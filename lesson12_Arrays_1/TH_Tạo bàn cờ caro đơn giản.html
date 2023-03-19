@@ -13,7 +13,10 @@
     let board = [];
     let data = "";
     for (let i = 0; i < 5; i++) {
-        board[i] = new Array(0, 0, 0, 0, 0);
+        board[i] = new Array();
+        for (let j = 0; j < 5; j++) {
+            board[i][j] = 0;
+        }
     }
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 5; j++) {
@@ -23,7 +26,7 @@
     }
     document.getElementById("carogame").innerHTML = data;
 
-    //    document.write(data);
+//    document.write(data);
     function changeValue() {
       let data = "";
         let positionX = +prompt("Nhập chỉ số hàng", '0');

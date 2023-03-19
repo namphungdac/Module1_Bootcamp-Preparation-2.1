@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1, 4, 2, 3, 1, 5, 2, 1, 5, 4, 5, 5];
+    let arr2 = [];
+    let n = 0;
+    let count;
+    document.write(arr + '<br>' + '<br>');
+    for (let i = 0; i < arr.length; i++) {
+        let index = arr.indexOf(arr[i]);
+        if (index === i) {
+            arr2[n] = arr[i];
+            n++;
+        }
+    }
+    console.log(arr2);
+    for (let j = 0; j < arr2.length; j++) {
+        count = 0;
+        for (let k = 0; k < arr.length; k++) {
+            if (arr2[j] === arr[k]) {
+                count++;
+            }
+        }
+        document.write(`Phần tử ${arr2[j]} xuất hiện ${count} lần <br>`);
+    }
+</script>
+</body>
+</html>

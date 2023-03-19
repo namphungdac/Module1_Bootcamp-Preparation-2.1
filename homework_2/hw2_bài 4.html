@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [9, 1, 4, 2, 3, 1, 5, 2, 1, 6, 5, 4, 5, 5];
+    let count;
+    document.write('Mảng a = ' + arr + '<br>' + '<br>');
+    document.write('Các phần tử duy nhất trong mảng là: ');
+    for (let i = 0; i < arr.length; i++) {
+        count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                count++;
+            }
+        }
+        if (count === 1) {
+            document.write(arr[i] + ', ');
+        }
+    }
+</script>
+</body>
+</html>

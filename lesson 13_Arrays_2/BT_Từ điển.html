@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="checkWord">Nhập từ:</label>
+<input id="checkWord" type="text">
+<button type="submit" onclick="converse()">Dịch</button>
+<p id="display"></p>
+<script>
+    let arr2 = ['chuối', 'táo', 'cam', 'xoài', 'chanh'];
+    let arr1 = ['banana', 'apple', 'orange', 'mango', 'lemon'];
+
+    function converse() {
+        let word = document.getElementById('checkWord').value;
+        let index = arr1.indexOf(word);
+        console.log(word);
+        if (index !== -1) {
+            document.getElementById('display').innerHTML = arr2[index];
+        } else {
+            document.getElementById('display').innerHTML = 'Not found';
+        }
+    }
+</script>
+</body>
+</html>
