@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Temperature Converter</h2>
+<label for="inputF">Fahrenheit</label>
+<input id="inputF" type="number" oninput="temperatureConverter(this.value)">
+<p>Celsius: <span id="outputCelsius"></span></p>
+<script>
+  function temperatureConverter(number) {
+    document.getElementById("outputCelsius").innerHTML = (number-32) / 1.8;
+  }
+</script>
+</body>
+</html>
