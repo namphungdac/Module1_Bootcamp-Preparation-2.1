@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Nhập số thứ nhất:');
+    let b = +prompt('Nhập số thứ hai:');
+    alert(change_position(a,b));
+    function change_position(a,b) {
+        let tem = a;
+        a = b;
+        b = tem;
+        return `Hai số sau đổi chỗ là: ${a}, ${b}`;
+    }
+</script>
+</body>
+</html>

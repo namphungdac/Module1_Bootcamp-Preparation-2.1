@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> Add new product</h2>
+<input type="text" id="newProduct" placeholder="new product">
+<button onclick="addNewProduct()"> Add</button>
+<h2> Display all product</h2>
+<p id="showResult"></p>
+</div>
+<script>
+    let arr = ['Product_1', 'Product_2', 'Product_3'];
+    displayResut(arr);
+    function addNewProduct() {
+        arr.push(document.getElementById('newProduct').value);
+        document.getElementById('newProduct').value = '';
+        displayResut(arr);
+    }
+    function editProduct(index) {
+        let newEdit = prompt('Nhập giá trị muốn sửa:')
+        if (newEdit === null) {
+            displayResut(arr);
+        } else {
+            arr[index] = newEdit;
+            displayResut(arr);
+        }
+    }
+    function deleteProduct(index) {
+        if (confirm('Bạn có muốn xóa sản phẩm!')) {
+            arr.splice(index,1);
+            displayResut(arr);
+        }
+    }
+    function displayResut(arr) {
+        let table = '<table border="1" cellspacing="1" width="900">';
+        for (let i = 0; i < arr.length; i++) {
+            table += `<tr> <td>${arr[i]}</td>
+                        <td><button type="submit" onclick="editProduct('${i}')">Edit</button></td>
+                        <td><button type="submit" onclick="deleteProduct('${i}')">Delete</button></td>
+                       </tr>`
+        }
+        table += '</table>';
+        document.getElementById('showResult').innerHTML = table;
+    }
+</script>
+</body>
+</html>

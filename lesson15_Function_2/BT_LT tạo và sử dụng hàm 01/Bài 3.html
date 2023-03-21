@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let number_1 = +prompt('Nhập vào số thứ nhất:');
+  let number_2 = +prompt('Nhập vào số thứ hai:');
+  compareNumber(number_1, number_2);
+  function compareNumber(value_1, value_2) {
+    if (value_1 > value_2) {
+      return alert(`${value_1} lớn hơn ${value_2}`);
+    } else {
+      return alert(`Tổng của 2 số là: ${value_1 + value_2}`);
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="input_number">Nhập số cần tính</label>
+<input type="number" id="input_number" oninput="calculateFactorial(this.value)">
+<p>Giai thừa bằng: <span id="display_result"></span> </p>
+<script>
+  function calculateFactorial(value) {
+    let result = 1;
+    for (let i = 1; i <= value ; i++) {
+      result *= i;
+    }
+    document.getElementById('display_result').innerHTML = result;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let valueOfRadius = +prompt('Nhập bán kính hình tròn:');
+  alert(`Diện tích hình tròn là: ${calculateAcreageOfCircle(valueOfRadius)}\nChu vi hình tròn là: ${calculatePerimeterOfCircle(valueOfRadius)}`);
+  function calculateAcreageOfCircle(radius) {
+    return radius*radius*3.14;
+  }
+  function calculatePerimeterOfCircle(radius) {
+    return 2*radius*3.14;
+  }
+</script>
+</body>
+</html>

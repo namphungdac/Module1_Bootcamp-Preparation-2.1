@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str_check = prompt('Nhập chuỗi cần kiểm tra:');
+    alert(isPalindrome(str_check));
+    function isPalindrome(str){
+      let arr = str.split('');
+      let length = arr.length;
+      let count = 0;
+      for (let i = 0; i < length/2; i++) {
+        if (arr[i] !== arr[length-i-1]) {
+          count++;
+        }
+      }
+      if (count === 0) {
+        return `Đây là chuỗi đối xứng`;
+      } else {
+        return `Đây không phải là chuỗi đối xứng`;
+      }
+    }
+    // function isPalindrome(str) {
+    //     let arr = str.split('');
+    //     let length = arr.length;
+    //     let count = 0;
+    //     let i = 0;
+    //     if (i < length/2) {
+    //       if (arr[i] !== arr[length-i-1]) {
+    //         count++;
+    //       }
+    //     }
+    // }
+</script>
+</body>
+</html>

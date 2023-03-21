@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label for="add_element">Nhập các phần tử mảng</label>
+<input type="text" id="add_element">
+<button type="submit" onclick="addArray()">Add array</button>
+<p id="display_arr"></p>
+<br>
+<button type="submit" onclick="reverseArray(addArray())">Đảo ngược mảng</button>
+<p id="display_arr2"></p>
+
+<script>
+  let arr = [];
+  // let index = 0;
+  function addArray() {
+    if (document.getElementById('add_element').value !== '' ) {
+      // arr[index] = document.getElementById('add_element').value;
+      // index++;
+      arr.push(document.getElementById('add_element').value);
+      document.getElementById('add_element').value = '';
+      document.getElementById('display_arr').innerHTML = `Mảng vừa nhập là: [${arr}]`;
+    }
+    console.log(arr);
+    return arr;
+  }
+  function reverseArray(arr) {
+    let n = arr.length;
+    for (let i = 0 ; i < n/2; i++) {
+        let a = arr[i];
+        arr[i] = arr[n-1-i];
+        arr[n-1-i] = a;
+    }
+    return document.getElementById('display_arr2').innerHTML = `Mảng đảo ngược là: [${arr}]`;
+  }
+</script>
+</body>
+</html>

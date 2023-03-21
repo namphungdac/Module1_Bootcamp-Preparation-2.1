@@ -16,4 +16,6 @@ function convert(){
         result = amount;
     }
     document.getElementById('display').innerHTML= result + " " + opn2;
+    document.write(amount);
+    console.log(typeof amount);
 }

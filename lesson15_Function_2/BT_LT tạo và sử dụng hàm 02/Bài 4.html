@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt('Nhập ký tự cần kiểm tra:');
+    function checkType(value) {
+        if (typeof (value) === 'number') {
+            return `${value} là ký tự số`;
+        }
+        else {
+            return `${value} không phải ký tự số`;
+        }
+    }
+    alert(checkType(number));
+</script>
+</body>
+</html>

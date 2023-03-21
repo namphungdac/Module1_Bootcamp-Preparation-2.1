@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="add_element">Nhập các phần tử mảng</label>
+<input type="text" id="add_element">
+<button type="submit" onclick="addArray()">Add array</button>
+<p id="display_arr"></p>
+<br>
+<label for="add_number"></label>
+<input type="text" id="add_number">
+<button type="submit" onclick="check_number(document.getElementById('add_number').value, addArray())">Kiểm tra phần tử
+</button>
+<p id="display_result"></p>
+<script>
+    let arr = [];
+
+    function addArray() {
+        // let str = '';
+        if (document.getElementById('add_element').value !== '') {
+            arr.push(document.getElementById('add_element').value);
+            document.getElementById('add_element').value = '';
+            document.getElementById('display_arr').innerHTML = `Mảng vừa nhập là: [${arr}]`;
+        }
+        // return str = arr.join(",");
+        console.log(arr);
+        return arr;
+    }
+
+    function check_number(value, arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (value === arr[i]) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            document.getElementById('display_result').innerHTML = `Ký tự ${value} không nằm trong mảng`;
+        } else {
+            document.getElementById('display_result').innerHTML = `Ký tự ${value} xuất hiện ${count} lần trong mảng`;
+        }
+    }
+</script>
+</body>
+</html>

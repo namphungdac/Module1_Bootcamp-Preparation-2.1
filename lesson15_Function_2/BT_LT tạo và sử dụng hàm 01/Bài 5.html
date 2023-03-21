@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let start = prompt('Nhập tên ngôi sao:');
+  converseTarttoConstellation(start);
+  function converseTarttoConstellation(value) {
+    let nameOfStar = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let nameofConstellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let index = nameOfStar.indexOf(value);
+    if (index === -1) {
+      return alert('Không tìm thấy tên ngôi sao');
+    }
+    else {
+      return alert(`Tên chòm sao của ${value} là: ${nameofConstellation[index]}`);
+    }
+  }
+</script>
+</body>
+</html>

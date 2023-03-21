@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let feet = +prompt('Nhập feet:');
+  let meter = +prompt('Nhập meter:');
+  converse(feet,meter);
+  function converse(feet_value, metter_value) {
+    let feet_result = feet_value * 0.305;
+    let metter_result = metter_value * 3.279;
+    return document.write(`${feet_value} feed = ${feet_result} metter <br> ${metter_value} metter = ${metter_result} feet`);
+  }
+</script>
+</body>
+</html>
