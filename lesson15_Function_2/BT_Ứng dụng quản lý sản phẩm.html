@@ -9,6 +9,8 @@
 <input type="text" id="newProduct" placeholder="new product">
 <button onclick="addNewProduct()"> Add</button>
 <h2> Display all product</h2>
+<h3>Product Name &nbsp&nbsp&nbsp&nbsp&nbsp <span id="numberProduct">Product</span></h3>
+
 <p id="showResult"></p>
 </div>
 <script>
@@ -35,7 +37,7 @@
         }
     }
     function displayResut(arr) {
-        let table = '<table border="1" cellspacing="1" width="900">';
+        let table = '<table border="1" cellspacing="1" width="600">';
         for (let i = 0; i < arr.length; i++) {
             table += `<tr> <td>${arr[i]}</td>
                         <td><button type="submit" onclick="editProduct('${i}')">Edit</button></td>
@@ -43,6 +45,7 @@
                        </tr>`
         }
         table += '</table>';
+        document.getElementById('numberProduct').innerHTML = `${arr.length} products`;
         document.getElementById('showResult').innerHTML = table;
     }
 </script>

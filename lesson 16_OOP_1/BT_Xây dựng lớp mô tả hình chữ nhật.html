@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="500" style="border: 2px solid black;"></canvas>
+<p>Area = <span id="displayArea"></span></p>
+<p>Perimeter = <span id="displayPerimeter"></span></p>
+<script>
+    class Rectangle {
+        x = Math.random()*1000;//random chạy từ 0 đến 500. Nếu ko khai *500 thì chạy random từ 0 -> 1(vô số số thập phân)
+        y = Math.random()*500;
+        constructor(width,height) {
+            this.width = width;
+            this.height = height;
+        }
+        getArea() {
+            return this.height * this.width;
+        }
+        getPerimeter() {
+            return (this.height + this.width) * 2;
+        }
+        randomColor(){
+            let red = Math.random() * 255;
+            let green = Math.random() * 255;
+            let blu = Math.random() * 255;
+            // return 'rgb(' + red + ',' + blu + ',' + green + ')'
+            return `rgb(${red}, ${green}, ${blu})`
+        }
+        paintRect() {
+            let c = document.getElementById("myCanvas");//khởi tạo biến c = hình canvas vừa khởi tạo ở trên
+            let ctx = c.getContext("2d");//getContext để lấy bút ctx vẽ trên c(canvas)
+            ctx.beginPath(); //Đặt bút vẽ
+            ctx.rect(this.x, this.y, this.width, this.height); //Công thức vẽ HCN; rect:hình chữ nhật
+            ctx.fillStyle = this.randomColor();//chọn màu cho hình
+            ctx.fill();//Đổ màu cho hình
+            ctx.closePath();//Đóng bút
+        }
+    }
+    let rect1 = new Rectangle(200,100);
+    rect1.paintRect();
+    document.getElementById('displayArea').innerHTML = rect1.getArea();
+    document.getElementById('displayPerimeter').innerHTML = rect1.getPerimeter();
+</script>
+</body>
+</html>
