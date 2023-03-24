@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Battery {
+        energy;
+        constructor(energy) {
+            this.energy = energy;
+        }
+        getEnergy() {
+            return this.energy;
+        }
+        setEnergy(newEnergy) {
+            this.energy = newEnergy;
+        }
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+    class FlashLamp {
+        status;
+        battery;
+        constructor(status, battery) {
+            this.status = status;
+            this.battery = battery;
+        }
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        }
+        Light() {
+            if (this.status) {
+                return 'Lighting';
+            } else {
+                return 'Not lighning';
+            }
+        }
+        turnon() {
+            this.status = true;
+            this.battery.decreaseEnergy();
+            return 'turnon';
+        }
+        turnoff() {
+            this.status = false;
+            return 'turnoff';
+        }
+    }
+    let battery1 = new Battery(10);
+    let lamp1 = new FlashLamp(false, battery1);
+    document.write(lamp1.Light() + '<br>');
+    document.write("Battery info: " + lamp1.getBatteryInfo() + '<br>'+ '<br>');
+
+    document.write(lamp1.turnon()+ '<br>');
+    document.write(lamp1.Light() + '<br>');
+    document.write("Battery info: " + lamp1.getBatteryInfo() + '<br>'+ '<br>');
+
+    document.write(lamp1.turnon()+ '<br>');
+    document.write(lamp1.Light() + '<br>');
+    document.write("Battery info: " + lamp1.getBatteryInfo() + '<br>'+ '<br>');
+
+    document.write(lamp1.turnoff()+ '<br>');
+    document.write(lamp1.Light() + '<br>');
+    document.write("Battery info: " + lamp1.getBatteryInfo() + '<br>'+ '<br>');
+</script>
+</body>
+</html>
