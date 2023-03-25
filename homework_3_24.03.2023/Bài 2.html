@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findNumber(arr, number) {
+        let arr_result = [];
+        document.write(`Mảng vừa nhập là: [${arr}]<br><br>Bộ ba số trong mảng có tổng bằng ${number} là:<br>`)
+        for (let i = 0; i < arr.length - 2; i++) {
+            let sum = 0;
+            if (arr[i] <= number) {
+                for (let j = i + 1; j < arr.length - 1; j++) {
+                    sum = arr[i];
+                    if (sum + arr[j] <= number) {
+                        for (let k = j + 1; k < arr.length; k++) {
+                            sum = arr[i] + arr[j];
+                            if (sum + arr[k] === number) {
+                                arr_result = [arr[i], arr[j], arr[k]];
+                                document.write(arr_result + '<br>');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    let arr = [0, 16, 6, 8, 13, 2, 5, 4, 0, 10];
+    let number = 10;
+    findNumber(arr, number);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findArrMax(arr_1, arr_2, arr_3, arr_4) {
+        let arr = [arr_1, arr_2, arr_3, arr_4];
+        let sum = arr[0].reduce(function (sum, current) {
+            return sum + current;
+        });
+        let index = 0;
+        for (let i = 1; i < arr.length; i++) {
+            if (sum < arr[i].reduce(function (sum, current) {
+                return sum + current;
+            })) {
+                sum = arr[i].reduce(function (sum, current) {
+                    return sum + current;
+                });
+                index = i;
+            }
+        }
+        document.write(`4 mảng vừa nhập là:<br>[${arr_1}]<br>[${arr_2}]<br>[${arr_3}]<br>[${arr_4}]<br><br>`);
+        document.write(`Mảng thứ ${index + 1}: [${arr[index]}] có tổng lớn nhất = ${sum}`);
+    }
+
+    let arr1 = [1, 2, 3, 4];
+    let arr2 = [1, 3, 4, 5];
+    let arr3 = [2, 3, 5, 5];
+    let arr4 = [0, 0, 1, 2];
+    findArrMax(arr1, arr2, arr3, arr4);
+</script>
+</body>
+</html>

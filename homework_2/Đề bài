@@ -1,0 +1,5 @@
+1. Viết hàm loại bỏ các giá trị sai (falsey) khỏi một mảng, bao gồm: false, null, 0, “”, undefined và NaN.
+2. Viết hàm tìm kiếm phần tử lớn thứ hai trong một mảng.
+3. Viết hàm đếm số lần xuất hiện của các phần tử trong một mảng và trả về một đối tượng với key là giá trị của phần tử và value là số lần xuất hiện.
+4. Viết hàm tìm kiếm phần tử duy nhất (không trùng) trong một mảng.
+5. Viết hàm tạo ra một mảng mới với giá trị của phần tử tương ứng trong hai mảng đầu vào đã cho được tổng lại.

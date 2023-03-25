@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class checkArrSub {
+    constructor(arr, index_1, index_2, distance) {
+      this.arr = arr;
+      this.index_1 = index_1;
+      this.index_2 = index_2;
+      this.distance = distance;
+    }
+
+    getArr() {
+      return this.arr;
+    }
+
+    getIndex_1() {
+      return this.index_1;
+    }
+
+    getIndex_2() {
+      return this.index_2;
+    }
+
+    getDistance() {
+      return this.distance;
+    }
+  }
+
+  let arr_result = [];
+  let arr = [0, 16, 6, 8, 13, 2, 5, 4, 2, 4, 10, 0];
+  let number = 6;
+  for (let i = 0; i < arr.length - 1; i++) {
+    let sum = 0;
+    if (arr[i] <= number) {
+      for (let j = i + 1; j < arr.length; j++) {
+        sum = arr[i];
+        if (sum + arr[j] === number) {
+          let arr_sub = [arr[i], arr[j]];
+          let distance_sub = j - i;
+          arr_result.push(new checkArrSub(arr_sub, i, j, distance_sub));
+        }
+      }
+    }
+  }
+  console.log(arr_result);
+  let minDistance = arr_result[0].getDistance();
+  for (let i = 1; i < arr_result.length; i++) {
+    if (minDistance > arr_result[i].getDistance()) {
+      minDistance = arr_result[i].getDistance();
+    }
+  }
+  arr_result.filter(function (value) {
+    if (value.getDistance() === minDistance) {
+      document.write(`Hai số: ${value.getArr()} ở vị trí thứ ${value.getIndex_1()} và ${value.getIndex_2()} của mảng <br>`);
+      // console.log(value.getArr());
+    }
+  });
+
+  // let a = [];
+  // arr_result.filter(function (value) {
+  //     if (value.getDistance() === minDistance) {
+  //         return a.push(value.getArr());
+  //     }
+  // });
+  // console.log(a);
+  // document.write(a);
+//Bài 4: C2
+  // for (let i = 0; i < arr.length; i++) {
+  //   let count = 0;
+  //   for (let j = 0; j < arr.length; j++) {
+  //     if (arr[i] === arr[j]) {
+  //       count += 1;
+  //     }
+  //   }
+  //   if (count === 1) {
+  //     document.write(arr[i]);
+  //     break;
+  //   }
+  // }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function find2Number(arr, number) {
+        document.write(`Mảng vừa nhập là: [${arr}] <br><br>`);
+        class checkArrSub {
+            constructor(arr, index_1, index_2, distance) {
+                this.arr = arr;
+                this.index_1 = index_1;
+                this.index_2 = index_2;
+                this.distance = distance;
+            }
+
+            getArr() {
+                return this.arr;
+            }
+
+            getIndex_1() {
+                return this.index_1;
+            }
+
+            getIndex_2() {
+                return this.index_2;
+            }
+
+            getDistance() {
+                return this.distance;
+            }
+        }
+
+        let arr_result = [];
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] <= number) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    let sum = arr[i];
+                    if (sum + arr[j] === number) {
+                        let arr_sub = [arr[i], arr[j]];
+                        let distance_sub = j - i;
+                        arr_result.push(new checkArrSub(arr_sub, i, j, distance_sub));
+                    }
+                }
+            }
+        }
+        let minDistance = arr_result[0].getDistance();
+        for (let i = 1; i < arr_result.length; i++) {
+            if (minDistance > arr_result[i].getDistance()) {
+                minDistance = arr_result[i].getDistance();
+            }
+        }
+        document.write(`Hai số trong mảng có tổng bằng ${number} và có khoảng cách nhỏ nhất là:<br>`)
+        arr_result.filter(function (value) {
+            if (value.getDistance() === minDistance) {
+                document.write(`${value.getArr()} ở vị trí thứ ${value.getIndex_1()} và ${value.getIndex_2()} trong mảng <br>`);
+            }
+        });
+    }
+
+    let arr = [0, 16, 6, 8, 13, 2, 5, 4, 2, 4, 10, 0];
+    let number = 6;
+    find2Number(arr, number);
+</script>
+</body>
+</html>
