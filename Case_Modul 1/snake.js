@@ -33,6 +33,7 @@ function game() {
 
     //move snake
     let index_next = {x: snake[0].x + dx, y: snake[0].y + dy};
+
     //snake hit wall
     if (index_next.x > canvas.width) {
         index_next.x = dx;
@@ -93,9 +94,7 @@ function game() {
         }
     });
 }
-
 let interval = setInterval(game, 60);
-
 function play() {
     location.reload()
 }
